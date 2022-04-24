@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trade</title>
+    <link rel="shortcut icon" href="../images/candy.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/export.js"></script>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" /> -->
+    <link rel="stylesheet" href="../css/categories-style.css" />
+</head>
+
+<body onload="start()">
+    <header id="head">
+        <nav class="navbar navbar-expand-md navbar-lightGreen">
+            <div class="container">
+                <a href="#" class="navbar-brand">
+                    <img src="../images/logo.png" alt="Logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="d-flex navbar-nav flex-grow-1 justify-content-end fw-500">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="../index.html">HOME</a>
+                        </li>
+                        <li class="nav-item ps-md-4">
+                            <a class="nav-link active" href="#">CATEGORY</a>
+                        </li>
+                        <li class="nav-item ps-md-4">
+                            <a class="nav-link" href="#">FAQ</a>
+                        </li>
+                        <li class="d-flex nav-item align-items-center ps-md-4">
+                            <img class="user-ico" src="../images/user-ico.svg" />
+                            <a class="nav-link" href="#">SIQN IN</a>
+                            <span>/</span>
+                            <a class="nav-link" href="#">REQISTER</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="main">
+        <div class="container">
+            <nav class="navigation">
+                <!-- <a href="../index.html">Home</a>
+                >>
+                <a href="#">Category</a> -->
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="#" class="headerCategory">Category </a></li>
+                </ul>
+                <h2 class="name-categorie headerCategory">Category </h2>
+            </nav>
+            <div class="row">
+                <div class="d-flex justify-content-center">
+                    <div class="banner w-100 mb-3">
+                        <form class="input-group search" action="javascript:clickSearch()">
+                            <div class="dropdown col-12 col-md-6 col-lg-2">
+                                <button id="categoryForChange" class="btn btn-white dropdown-toggle w-100" type="button"
+                                    id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Select Category
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <li>
+                                        <a class="my-dropdown-item" onclick="changeCategory(event)">Cars & Vehicles</a>
+                                    </li>
+                                    <li>
+                                        <a class="my-dropdown-item" onclick="changeCategory(event)">Electrics &
+                                            Gedgets</a>
+                                    </li>
+                                    <li>
+                                        <a class="my-dropdown-item" onclick="changeCategory(event)">Real Estate</a>
+                                    </li>
+                                    <li>
+                                        <a class="my-dropdown-item" onclick="changeCategory(event)">Sports & Games</a>
+                                    </li>
+                                    <li>
+                                        <a class="my-dropdown-item" onclick="changeCategory(event)">Fshion & Beauty</a>
+                                    </li>
+                                    <li>
+                                        <a class="my-dropdown-item" onclick="changeCategory(event)">Pets & Animals</a>
+                                    </li>
+                                    <li>
+                                        <a class="my-dropdown-item" onclick="changeCategory(event)">Home Appliances</a>
+                                    </li>
+                                    <li>
+                                        <a class="my-dropdown-item" onclick="changeCategory(event)">Matrimony
+                                            Services</a>
+                                    </li>
+                                    <li>
+                                        <a class="my-dropdown-item" onclick="changeCategory(event)">Miscellaneous </a>
+                                    </li>
+                                    <li>
+                                        <a class="my-dropdown-item" onclick="changeCategory(event)">Job Openings </a>
+                                    </li>
+                                    <li>
+                                        <a class="my-dropdown-item" onclick="changeCategory(event)">Books &
+                                            Magazines</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="dropdown col-12 col-md-6 col-lg-2">
+                                <button id="locationForChange" class="btn btn-white dropdown-toggle w-100" type="button"
+                                    id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Select Location
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <li>
+                                        <a class="my-dropdown-item" onclick="changeLocation(event)">United Kingdom</a>
+                                    </li>
+                                    <li>
+                                        <a class="my-dropdown-item" onclick="changeLocation(event)">United States</a>
+                                    </li>
+                                    <li>
+                                        <a class="my-dropdown-item" onclick="changeLocation(event)">China</a>
+                                    </li>
+                                    <li>
+                                        <a class="my-dropdown-item" onclick="changeLocation(event)">Russia</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <input id="searchText" type="text" class="form-control col-12 col-md"
+                                aria-label="Text input with dropdown button" placeholder="Type Your key word" />
+                            <button class="btn btn-green col-12 col-md-2" type="submit">
+                                SEARCH
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="categories-info">
+                <div class="row">
+                    <div class="filter col-lg-3 col-md-4">
+                        <div class="filter-item">
+                            <p>
+                                <button class="my-btn-filter d-flex justify-content-between collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#allCategories" aria-expanded="false"
+                                    aria-controls="allCategories" onclick="closePrevFilter(event)">
+                                    All Categories
+                                </button>
+                            </p>
+                            <div class="collapse" id="allCategories">
+                                <div class="card card-body">
+                                    <ul>
+                                        <li>
+                                            <a onclick="generateCategoryParam(event)">
+                                                <img src="../images/comp.png" alt="img">
+                                                <span class="category-name">Electrics & Gedgets</span>
+                                                <span class="count">(1029)</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="generateCategoryParam(event)">
+                                                <img src="../images/car.png" alt="img">
+                                                <span class="category-name">Cars & Vehicles</span>
+                                                <span class="count">(1228)</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="generateCategoryParam(event)">
+                                                <img src="../images/house.png" alt="img">
+                                                <span class="category-name">Real Estate</span>
+                                                <span class="count">(134)</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="generateCategoryParam(event)">
+                                                <img src="../images/ball.png" alt="img">
+                                                <span class="category-name">Sports & Games</span>
+                                                <span class="count">(134)</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="generateCategoryParam(event)">
+                                                <img src="../images/shirt.png" alt="img">
+                                                <span class="category-name">Fshion & Beauty</span>
+                                                <span class="count">(134)</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="generateCategoryParam(event)">
+                                                <img src="../images/bowl.png" alt="img">
+                                                <span class="category-name">Pets & Animals</span>
+                                                <span class="count">(134)</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="generateCategoryParam(event)">
+                                                <img src="../images/sofa.png" alt="img">
+                                                <span class="category-name">Home Appliances</span>
+                                                <span class="count">(134)</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="generateCategoryParam(event)">
+                                                <img src="../images/hearts.png" alt="img">
+                                                <span class="category-name">Matrimony Services</span>
+                                                <span class="count">(134)</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a onclick="generateCategoryParam(event)">
+                                                <img src="../images/drum.png" alt="img">
+                                                <span class="category-name">Music & Arts</span>
+                                                <span class="count">(134)</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-item">
+                            <p>
+                                <button class="my-btn-filter d-flex justify-content-between collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseCondition" aria-expanded="false"
+                                    aria-controls="collapseCondition" onclick="closePrevFilter(event)">
+                                    Condition
+                                </button>
+                            </p>
+                            <div class="collapse" id="collapseCondition">
+                                <div class="card card-body">
+                                    <ul>
+                                        <li><input id="filterNew" type="checkbox" class="filter-input"
+                                                onclick="clickfilterInputNewUsed(event)">New</li>
+                                        <li><input id="filterUsed" type="checkbox" class="filter-input"
+                                                onclick="clickfilterInputNewUsed(event)">Used</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter-item">
+                            <p>
+                                <button class="my-btn-filter d-flex justify-content-between collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapsePostedBy" aria-expanded="false"
+                                    aria-controls="collapsePostedBy" onclick="closePrevFilter(event)">
+                                    Posted by
+                                </button>
+                            </p>
+                            <div class="collapse" id="collapsePostedBy">
+                                <div class="card card-body">
+                                    <ul>
+                                        <li><input type="checkbox" class="filter-input postedBy">Individual</li>
+                                        <li><input type="checkbox" class="filter-input postedBy">Dealer
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-lg-7">
+                        <div class="white-block info">
+                            <div class="feature d-flex justify-content-between align-items-center">
+                                <h4>Recommended Ads for You</h4>
+                                <div class="sort d-flex align-items-center">
+                                    <span>Sort by:</span>
+                                    <div class="dropdown">
+                                        <button id="sortForChange" class="btn" type="button" id="dropdownMenuButton1"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            All
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                            <li><a class="my-dropdown-item" onclick="changeSort(event)">Newest(low)</a>
+                                            </li>
+                                            <li><a class="my-dropdown-item"
+                                                    onclick="changeSort(event)">Newest(hight)</a>
+                                            </li>
+                                            <li><a class="my-dropdown-item" onclick="changeSort(event)">Price(low)</a>
+                                            </li>
+                                            <li><a class="my-dropdown-item" onclick="changeSort(event)">Price(hight)</a>
+                                            </li>
+                                            <li><a class="my-dropdown-item" onclick="changeSort(event)">All</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="product-items">
+                                <div class="loaing d-flex justify-content-center mt-5">
+                                    <img src="../gif/Gray_circles_rotate.gif" alt="loading.." class="w-25">
+                                </div>
+                                <div class="row">
+                                    <!-- <div class="ad-image item-image col-12 col-md-5 col-lg-4">
+                                      <img src="../data/phone.jpg" alt="Samsung Galaxy S6 Edge" />
+                                    </div>
+                                    <div class="col">
+                                      <div class="info">
+                                        <h5>$380.00</h5>
+                                        <a href="#" class="product-name">Samsung Galaxy S6 Edge</a>
+                                        <div class="product-categorie">
+                                          <a href="#">Electronics & Gedgets</a>
+                                        </div>
+                                      </div>
+                                      <div class="additionally d-none w-larger">
+                                        <div class="left-icons d-flex">
+                                          <a href="#">7 Jan 10:10 pm</a>
+                                          <a href="#" class="tags">Used</a>
+                                        </div>
+                                        <div class="icons">
+                                          <a href="#" class="nav-icon" title="Los Angeles"></a>
+                                          <a href="#" class="individual" title="Individual"></a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="additionally col-12 w-smaller">
+                                      <div class="left-icons d-flex">
+                                        <a href="#">7 Jan 10:10 pm</a>
+                                        <a href="#" class="tags">Used</a>
+                                      </div>
+                                      <div class="icons">
+                                        <a href="#" class="nav-icon" title="Los Angeles"></a>
+                                        <a href="#" class="individual" title="Individual"></a>
+                                      </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                            <div class="pagenation text-center">
+                                <ul class="pages">
+                                    <li><a href="#">‹</a></li>
+                                    <li><a href="#">1</a></li>
+                                    <li class="active"><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li class="disable"><a>...</a></li>
+                                    <li><a href="#">10</a></li>
+                                    <li><a href="#">20</a></li>
+                                    <li><a href="#">30</a></li>
+                                    <li><a href="#">›</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 d-none d-lg-block">
+                        <a href="#">
+                            <img src="../data/images/advertising.jpg" alt="image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <nav id="postRek">
+        <div class="d-flex background">
+            <div class="container text-center">
+                <h2 class="">Do you have something-sell?</h2>
+                <h4 class="">Post your ad for free on Trade.com</h4>
+                <a class="btn btn-green">Post Your Ad</a>
+            </div>
+        </div>
+    </nav>
+    <footer id="end">
+        <div class="white-block">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3 col-sm-6">
+                <h3>Quik Links</h3>
+                <ul>
+                  <li><a href="#">About us</a></li>
+                  <li><a href="#">Contact us</a></li>
+                  <li><a href="#">Careers</a></li>
+                  <li><a href="#">All Cities</a></li>
+                  <li><a href="#">Help & Support</a></li>
+                  <li><a href="#">Advertise With Us</a></li>
+                  <li><a href="#">Blog</a></li>
+                </ul>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <h3>How to sell fast</h3>
+                <ul>
+                  <li><a href="#">How To Sell Fast</a></li>
+                  <li><a href="#">Membership</a></li>
+                  <li><a href="#">Banner Advertising</a></li>
+                  <li><a href="#">Promote Your Ad</a></li>
+                  <li><a href="#">Trade Delivers</a></li>
+                  <li><a href="#">FAQ</a></li>
+                </ul>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <h3>Follow us on</h3>
+                <ul class="social">
+                  <li>
+                    <a href="#">
+                      <img src="../images/facebook.png" alt="img">
+                      Facebook
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="../images/twitter.png" alt="img">
+                      Twitter
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="../images/google+.png" alt="img">
+                      Google+
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="../images/youtube.png" alt="img">
+                      Youtube
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <h3>Newsletter</h3>
+                <p>Trade is Worldest leading classifieds platform that brings!</p>
+                <form action="">
+                  <input type="text" class="form-control" placeholder="Your email id">
+                  <button class="btn btn-green">Sign Up</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <p class="copyright text-center">Copyright © 2022.</p>
+
+      <div id="presents" class="opened">
+        <h4>Presents</h4>
+        <a><img src="/gif/Gray_circles_rotate.gif" alt="load" onclick="openClosePresents()"></a>
+        <ul>
+          <li><a href="#" class="color-1"></a></li>
+          <li><a href="#" class="color-2"></a></li>
+          <li><a href="#" class="color-3"></a></li>
+          <li><a href="#" class="color-4"></a></li>
+        </ul>
+      </div>
+      <a id="scrollup" href="#head"></a>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/start.js"></script>
+</body>
+
+</html>
